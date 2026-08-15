@@ -1,0 +1,33 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: depot
+          POSTGRES_USER: depot
+          POSTGRES_PASSWORD: depot
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s
+          --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: lint
+        run: ruff check . || true
+      - name: tests on sqlite
+        run: pytest -q
+      - name: tests on postgres
+        env:
+          USE_POSTGRES: "1"
+          PGHOST: 127.0.0.1
+        run: pytest -q

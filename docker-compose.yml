@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: depot
+      POSTGRES_USER: depot
+      POSTGRES_PASSWORD: depot
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U depot"]
+      interval: 5s
+      retries: 10

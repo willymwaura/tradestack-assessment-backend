@@ -1,0 +1,202 @@
+[
+  {
+    "outlet_code": "OUT-1000",
+    "outlet_name": "Neema Shop",
+    "route_code": "R-NKR-01"
+  },
+  {
+    "outlet_code": "OUT-1001",
+    "outlet_name": "Upendo Enterprises",
+    "route_code": "R-NKR-02"
+  },
+  {
+    "outlet_code": "OUT-1002",
+    "outlet_name": "Upendo Stores",
+    "route_code": "R-NAI-03"
+  },
+  {
+    "outlet_code": "OUT-1003",
+    "outlet_name": "Riziki Enterprises",
+    "route_code": "R-GLS-04"
+  },
+  {
+    "outlet_code": "OUT-1004",
+    "outlet_name": "Neema Stores",
+    "route_code": "R-MOL-05"
+  },
+  {
+    "outlet_code": "OUT-1005",
+    "outlet_name": "Neema Mini-mart",
+    "route_code": "R-SUB-06"
+  },
+  {
+    "outlet_code": "OUT-1006",
+    "outlet_name": "Furaha Kiosk",
+    "route_code": ""
+  },
+  {
+    "outlet_code": "OUT-1007",
+    "outlet_name": "Riziki Supplies",
+    "route_code": "R-NKR-02"
+  },
+  {
+    "outlet_code": "OUT-1008",
+    "outlet_name": "Bidii Shop",
+    "route_code": "R-NAI-03"
+  },
+  {
+    "outlet_code": "OUT-1009",
+    "outlet_name": "Rehema General Store",
+    "route_code": "R-GLS-04"
+  },
+  {
+    "outlet_code": "OUT-1010",
+    "outlet_name": "Riziki Stores",
+    "route_code": "R-MOL-05"
+  },
+  {
+    "outlet_code": "OUT-1011",
+    "outlet_name": "Tumaini General Store",
+    "route_code": "R-SUB-06"
+  },
+  {
+    "outlet_code": "OUT-1012",
+    "outlet_name": "Furaha Shop",
+    "route_code": "R-NKR-01"
+  },
+  {
+    "outlet_code": "OUT-1013",
+    "outlet_name": "Jitegemee General Store",
+    "route_code": "R-NKR-02"
+  },
+  {
+    "outlet_code": "OUT-1014",
+    "outlet_name": "Neema General Store",
+    "route_code": "R-NAI-03"
+  },
+  {
+    "outlet_code": "OUT-1015",
+    "outlet_name": "Wema Stores",
+    "route_code": "R-GLS-04"
+  },
+  {
+    "outlet_code": "OUT-1016",
+    "outlet_name": "Salama Enterprises",
+    "route_code": "R-MOL-05"
+  },
+  {
+    "outlet_code": "OUT-1017",
+    "outlet_name": "Amani Kiosk",
+    "route_code": ""
+  },
+  {
+    "outlet_code": "OUT-1018",
+    "outlet_name": "Baraka Enterprises",
+    "route_code": "R-NKR-01"
+  },
+  {
+    "outlet_code": "OUT-1019",
+    "outlet_name": "Riziki Mini-mart",
+    "route_code": "R-NKR-02"
+  },
+  {
+    "outlet_code": "OUT-1020",
+    "outlet_name": "Bidii Mini-mart",
+    "route_code": "R-NAI-03"
+  },
+  {
+    "outlet_code": "OUT-1021",
+    "outlet_name": "Maendeleo Supplies",
+    "route_code": "R-GLS-04"
+  },
+  {
+    "outlet_code": "OUT-1022",
+    "outlet_name": "Maendeleo Shop",
+    "route_code": "R-MOL-05"
+  },
+  {
+    "outlet_code": "OUT-1023",
+    "outlet_name": "Maendeleo Stores",
+    "route_code": "R-SUB-06"
+  },
+  {
+    "outlet_code": "OUT-1024",
+    "outlet_name": "Heshima Shop",
+    "route_code": ""
+  },
+  {
+    "outlet_code": "OUT-1025",
+    "outlet_name": "Salama Shop",
+    "route_code": "R-NKR-02"
+  },
+  {
+    "outlet_code": "OUT-1026",
+    "outlet_name": "Wema Enterprises",
+    "route_code": "R-NAI-03"
+  },
+  {
+    "outlet_code": "OUT-1027",
+    "outlet_name": "Baraka General Store",
+    "route_code": "R-GLS-04"
+  },
+  {
+    "outlet_code": "OUT-1028",
+    "outlet_name": "Zawadi Shop",
+    "route_code": "R-MOL-05"
+  },
+  {
+    "outlet_code": "OUT-1029",
+    "outlet_name": "Jitegemee Enterprises",
+    "route_code": "R-SUB-06"
+  },
+  {
+    "outlet_code": "OUT-1030",
+    "outlet_name": "Furaha Traders",
+    "route_code": "R-NKR-01"
+  },
+  {
+    "outlet_code": "OUT-1031",
+    "outlet_name": "Amani General Store",
+    "route_code": "R-NKR-02"
+  },
+  {
+    "outlet_code": "OUT-1032",
+    "outlet_name": "Zawadi Enterprises",
+    "route_code": "R-NAI-03"
+  },
+  {
+    "outlet_code": "OUT-1033",
+    "outlet_name": "Riziki Traders",
+    "route_code": "R-GLS-04"
+  },
+  {
+    "outlet_code": "OUT-1034",
+    "outlet_name": "Amani Mini-mart",
+    "route_code": "R-MOL-05"
+  },
+  {
+    "outlet_code": "OUT-1035",
+    "outlet_name": "Subira Traders",
+    "route_code": "R-SUB-06"
+  },
+  {
+    "outlet_code": "OUT-1036",
+    "outlet_name": "Tumaini Traders",
+    "route_code": "R-NKR-01"
+  },
+  {
+    "outlet_code": "OUT-1037",
+    "outlet_name": "Maendeleo General Store",
+    "route_code": "R-NKR-02"
+  },
+  {
+    "outlet_code": "OUT-1038",
+    "outlet_name": "Riziki Shop",
+    "route_code": "R-NAI-03"
+  },
+  {
+    "outlet_code": "OUT-1039",
+    "outlet_name": "Baraka Shop",
+    "route_code": ""
+  }
+]
