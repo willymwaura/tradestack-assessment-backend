@@ -78,7 +78,13 @@
 
 * Store both the batch-level `device_id` and the receipt-level `device_id`.
 * Reason: The sample payload contains both, and retaining them avoids losing audit information.
+### Duplicate Batch Detection
 
+The contract states that a handset may retry an entire batch if it does not receive a response. To prevent duplicate processing, I generate a deterministic SHA-256 hash from the incoming batch payload and store it in the CollectionBatch table.
+
+If a batch with the same hash is received again, it is treated as a duplicate retry and is not reprocessed.
+
+This approach requires no additional client-generated identifiers and directly addresses the retry behavior described in the specification.
 
 ## Where the contract was unclear or wrong
 <!-- For each one: what the ticket said, what the problem is, what you did
