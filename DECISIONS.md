@@ -86,6 +86,17 @@ If a batch with the same hash is received again, it is treated as a duplicate re
 
 This approach requires no additional client-generated identifiers and directly addresses the retry behavior described in the specification.
 
+### Collision Detection
+
+I defined a collision as an incoming collection whose `receipt_ref` already exists in the system.
+
+When a collision occurs, the contract's last-write-wins rule is applied using `recorded_at`:
+
+- If the incoming record has a newer `recorded_at`, the existing collection is updated.
+- If the incoming record has an older or equal `recorded_at`, the incoming record is ignored.
+
+This behavior is recorded in the audit log.
+
 ## Where the contract was unclear or wrong
 <!-- For each one: what the ticket said, what the problem is, what you did
      instead, and what it would have cost to do it the ticket's way. -->
