@@ -71,11 +71,11 @@ class Collection(models.Model):
 
     client_uuid = models.UUIDField()
 
-    outlet = models.ForeignKey(
-        Outlet,
-        on_delete=models.PROTECT,
-        related_name="collections"
-    )
+    outlet_code = models.CharField(
+    max_length=16,
+    db_index=True,
+    default="ZX"
+)
 
     invoice_no = models.CharField(
         max_length=50
@@ -118,7 +118,7 @@ class Collection(models.Model):
         ordering = ["-recorded_at"]
         indexes = [
             models.Index(fields=["recorded_at"]),
-            models.Index(fields=["outlet"]),
+            models.Index(fields=["outlet_code"]),
         ]
 
     def __str__(self):

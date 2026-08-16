@@ -97,6 +97,13 @@ When a collision occurs, the contract's last-write-wins rule is applied using `r
 
 This behavior is recorded in the audit log.
 
+### Amount Validation
+
+Collections must have an amount greater than zero. Requests containing zero or negative amounts are rejected because they do not represent valid collection receipts.
+### Duplicate Receipt References Within a Batch
+
+A batch may not contain the same receipt reference more than once. Such requests are rejected because they create ambiguity during conflict resolution.
+
 ## Where the contract was unclear or wrong
 <!-- For each one: what the ticket said, what the problem is, what you did
      instead, and what it would have cost to do it the ticket's way. -->
