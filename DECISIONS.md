@@ -104,6 +104,16 @@ Collections must have an amount greater than zero. Requests containing zero or n
 
 A batch may not contain the same receipt reference more than once. Such requests are rejected because they create ambiguity during conflict resolution.
 
+### Transaction Management
+
+Batch processing is performed inside a database transaction. If any unexpected processing error occurs, the entire batch is rolled back to avoid partial writes.
+### Batch Processing Response
+
+The batch endpoint returns a processing summary including the number of created, updated and ignored receipts. This allows operators and clients to understand what action was taken.
+
+### Duplicate Batch Handling
+
+Duplicate batches return HTTP 200 rather than an error response. The retry behavior is expected according to the contract and is treated as a successful idempotent operation.
 ## Where the contract was unclear or wrong
 <!-- For each one: what the ticket said, what the problem is, what you did
      instead, and what it would have cost to do it the ticket's way. -->
