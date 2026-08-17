@@ -140,3 +140,55 @@ def test_newer_receipt_updates_existing_record(
     result = listed.json()["results"][0]
 
     assert float(result["amount_kes"]) == 500
+
+
+def test_older_receipt_is_ignored(
+    client,
+    outlets,
+):
+    code = outlets[0]["outlet_code"]
+
+    newer_batch = {
+        "device_id": "DEVICE-1",
+        "receipts": [
+            receipt(
+                "11111111-0000-4000-8000-000000000001",
+                code,
+                500,
+                "RC123",
+                "2026-07-14T11:00:00+03:00",
+            )
+        ],
+    }
+
+    client.post(URL, newer_batch, format="json")
+
+    older_batch = {
+        "device_id": "DEVICE-2",
+        "receipts": [
+            receipt(
+                "11111111-0000-4000-8000-000000000001",
+                code,
+                100,
+                "RC123",
+                "2026-07-14T10:00:00+03:00",
+            )
+        ],
+    }
+
+    response = client.post(
+        URL,
+        older_batch,
+        format="json",
+    )
+
+    assert response.status_code == 200
+
+    listed = client.get(
+        LIST,
+        {"outlet_code": code},
+    )
+
+    result = listed.json()["results"][0]
+
+    assert float(result["amount_kes"]) == 500
