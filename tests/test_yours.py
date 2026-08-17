@@ -56,3 +56,35 @@ def test_batch_larger_than_200_receipts_is_rejected(
     )
 
     assert response.status_code == 400, response.content
+
+def test_duplicate_receipt_refs_in_same_batch_are_rejected(
+    client,
+    outlets,
+):
+    code = outlets[0]["outlet_code"]
+
+    payload = {
+        "device_id": "AND-KDG907X",
+        "receipts": [
+            receipt(
+                "11111111-0000-4000-8000-000000000001",
+                code,
+                100,
+                "RC123",
+            ),
+            receipt(
+                "11111111-0000-4000-8000-000000000002",
+                code,
+                200,
+                "RC123",
+            ),
+        ],
+    }
+
+    response = client.post(
+        URL,
+        payload,
+        format="json",
+    )
+
+    assert response.status_code == 400
