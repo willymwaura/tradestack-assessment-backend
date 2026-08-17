@@ -62,7 +62,12 @@ def process_receipt(receipt_data, batch):
             payload=payload_snapshot,
         )
 
-        return "created"
+        return {
+    "client_uuid": str(
+        receipt_data["client_uuid"]
+    ),
+    "status": "created",
+}
 
     if receipt_data["recorded_at"] > existing.recorded_at:
 
@@ -87,7 +92,12 @@ def process_receipt(receipt_data, batch):
             payload=payload_snapshot,
         )
 
-        return "updated"
+        return {
+    "client_uuid": str(
+        receipt_data["client_uuid"]
+    ),
+    "status": "updated",
+}
 
     CollectionAudit.objects.create(
         collection=existing,
@@ -95,4 +105,9 @@ def process_receipt(receipt_data, batch):
         payload=payload_snapshot,
     )
 
-    return "ignored"
+    return {
+    "client_uuid": str(
+        receipt_data["client_uuid"]
+    ),
+    "status": "ignored",
+}

@@ -126,6 +126,10 @@ Duplicate batches are detected using a deterministic SHA-256 hash of the request
 
 Receipt collisions are identified using `receipt_ref`. When a collision occurs, the incoming record replaces the existing one only if its `recorded_at` timestamp is newer.
 
+### Collection Listing
+
+The listing endpoint supports filtering by outlet code and recorded date range. Results are paginated to prevent unbounded response sizes.
+
 ## Where the contract was unclear or wrong
 <!-- For each one: what the ticket said, what the problem is, what you did
      instead, and what it would have cost to do it the ticket's way. -->
