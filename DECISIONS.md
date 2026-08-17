@@ -114,6 +114,18 @@ The batch endpoint returns a processing summary including the number of created,
 ### Duplicate Batch Handling
 
 Duplicate batches return HTTP 200 rather than an error response. The retry behavior is expected according to the contract and is treated as a successful idempotent operation.
+### Atomic Batch Processing
+
+Receipt processing is performed inside a database transaction. A failure during processing rolls back the entire batch to prevent partial ingestion.
+
+### Duplicate Batch Handling
+
+Duplicate batches are detected using a deterministic SHA-256 hash of the request payload. Duplicate submissions are treated as successful retries and return HTTP 200 without reprocessing receipts.
+
+### Conflict Resolution
+
+Receipt collisions are identified using `receipt_ref`. When a collision occurs, the incoming record replaces the existing one only if its `recorded_at` timestamp is newer.
+
 ## Where the contract was unclear or wrong
 <!-- For each one: what the ticket said, what the problem is, what you did
      instead, and what it would have cost to do it the ticket's way. -->
